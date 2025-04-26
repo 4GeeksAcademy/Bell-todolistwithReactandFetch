@@ -1,0 +1,24 @@
+.title{
+    margin: 25px;
+    font-family: "Ubuntu", sans-serif;
+    color: black;
+    font-optical-sizing: auto;
+    text-shadow: 3px 2px 1px  rgb(87, 84, 84);
+    font-weight: none;
+    font-style: normal;
+
+}
+
+/* Hide delete button by default */
+.delete-task {
+    visibility: hidden;
+    transition: visibility 0.2s ease;
+  }
+  
+  /* Show delete button only on hover */
+  .todo-item:hover .delete-task {
+    visibility: visible;
+  }
+
+
+  

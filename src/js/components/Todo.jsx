@@ -9,15 +9,20 @@ const Todo = () => {
 
     return (
         <>
-            <h1>TO DO LIST!</h1>
+            <h1 className="title">TO DO LIST!</h1>
             <div>
             <TodoHeader 
                 todos={todos} 
                 setTodos={setTodos} 
             />
             </div>
-            <TodoBody todos={todos} deleteTodo={deleteTodo} />
-            <TodoFooter />
+            <TodoBody 
+                todos={todos} 
+                setTodos={setTodos}
+            />
+            <TodoFooter 
+                todos={todos}
+            />
         
         </>
     )

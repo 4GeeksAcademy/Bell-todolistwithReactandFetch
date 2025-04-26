@@ -45,8 +45,7 @@ const TodoHeader = ({todos, setTodos}) => {
     
     return (
         <>
-        <header className="todo-header">
-         <div className="input-group container w-50 p-3 ">
+         <div className="input-group input-group-lg container w-50 p-0 shadow">
               <input 
                 type="text"
                 className="new-todo form-control"
@@ -61,9 +60,7 @@ const TodoHeader = ({todos, setTodos}) => {
                 >Add task
             
             </button>
-            </div>
-        </header>
-        
+            </div>        
         </>
     )
 }
