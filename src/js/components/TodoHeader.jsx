@@ -27,8 +27,8 @@ const TodoHeader = ({todos, setTodos}) => {
     //this function will handle step 2 and 3
         
         const newTodoObj = {
-            id: counter,
-            todo: newTodo
+           // id: counter,
+            label: newTodo
         }
 
         console.log ("new todo:", newTodoObj)
@@ -37,10 +37,35 @@ const TodoHeader = ({todos, setTodos}) => {
         const appendedArray= [...todos, newTodoObj];
         setTodos(appendedArray);
 
-        setCounter(counter + 1);
+        //setCounter(counter + 1);
         setNewTodo("");
 
-        console.log("current list of todos: ", appendedArray)
+    //Step 4 - Create a new function to fecth to POST
+    postNewTask(newTodoObj);
+    }
+
+    const postNewTask = async (todoObject) => {
+        //fetch needs two arguments for aPOST (URL, {ooptions})
+        const response = await fetch('https://playground.4geeks.com/todo/todos/Bell', {
+            method: "POST",
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(todoObject)
+        });
+        if (response.ok){
+            const data = await response.json();
+            return data;
+        }
+        else {
+            console.log('Error: ', response.status, response.statusText);
+                    return {
+                        error: {
+                            status: response.status,
+                            statusText: response.statusText
+                        }
+                    }
+        }
     }
     
     return (
