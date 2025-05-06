@@ -1,12 +1,3 @@
-# Hello check out my project live in vercel:
-
-https://bell-todolistwith-react.vercel.app/
-
-
-
-
-
-
 
 
 
